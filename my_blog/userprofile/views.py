@@ -17,13 +17,13 @@ def user_register(request):
             return redirect("article:article_list")
         else:
             return HttpResponse("注册表单输入有误，请重新输入~")
-        elseif request.method == 'GET':
-            user_register_form = UserRegisterForm()
-            context = {'form':user_register_form }
-            return render(request,'userprofile/register.html',context)
-         else:
-                return HttpResponse("请使用GET或POST请求数据")
-            
+    elif request.method == 'GET':
+        user_register_form = UserRegisterForm()
+        context = {'form':user_register_form }
+        return render(request,'userprofile/register.html',context)
+    else:
+        return HttpResponse("请使用GET或POST请求数据")
+
 
 # 引入logout模块
 from django.contrib.auth import authenticate, login, logout
