@@ -2,26 +2,25 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<!-- 网站主语言 -->
 <html lang="zh-cn">
 
 <head>
-    <!-- 网站采用的字符编码 -->
+   
     <meta charset="utf-8">
-    <!-- 预留网站标题的位置 -->
+        <!-- 预留网站标题 -->
     <title>{% block title %}{% endblock %}</title>
     <!-- 引入bootstrap的css文件 -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 </head>
 
 <body>
-    <!-- 引入导航栏 -->
+        <!-- 引入导航栏 -->
     {% include 'header.html' %}
-    <!-- 预留具体页面的位置 -->
+        <!-- 预留具体页面的位置 -->
     {% block content %}{% endblock content %}
-    <!-- 引入注脚 -->
+    
     {% include 'footer.html' %}
-    <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
+    <!-- bootstrap.js 依赖 jquery.js 和popper.js，所以在这里引入 -->
     <script src="{% static 'jquery/jquery-3.5.1.js' %}"></script>       <!-- 引入layer.js -->
     
     <script src="{% static 'popper/popper-1.14.1.js' %}"></script>    
