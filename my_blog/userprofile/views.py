@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from .forms import UserLoginForm,UserRegisterForm
 
-#用户注册
+#用户注册模块
 def user_register(request):
     if request.method == 'POST':
         user_register_form = UserRegisterForm(data=request.POST)
@@ -28,8 +28,7 @@ def user_register(request):
 # 引入logout模块
 from django.contrib.auth import authenticate, login, logout
 
-# Create your views here.
-#用户登录
+#用户登录模块
 def user_login(request):
     if request.method == 'POST':
         user_login_form = UserLoginForm(data=request.POST)
@@ -54,7 +53,7 @@ def user_login(request):
     else:
         return HttpResponse("请使用GET或POST请求数据")
 
-# 用户退出
+# 用户退出模块
 def user_logout(request):
     logout(request)
     return redirect("article:article_list")
